@@ -39,6 +39,9 @@ const (
 	LBRACKET = "["
 	RBRACKET = "]"
 
+	COMMENT_START = "/*"
+	COMMENT_END = "*/"
+
 	// keyword
 	FUNCTION = "FUNCTION"
 	LET      = "LET"

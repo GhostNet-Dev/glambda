@@ -41,7 +41,8 @@ func TestHashLiterals(t *testing.T) {
 		4: 4,
 		true: 5,
 		false: 6
-	}`
+	}
+	// test */`
 	evaluated := testEval(input)
 	result, ok := evaluated.(*object.Hash)
 	if !ok {

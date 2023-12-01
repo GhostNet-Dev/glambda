@@ -28,10 +28,38 @@ func (l *Lexer) readChar() {
 	l.position = l.nextReadPosition
 	l.nextReadPosition++
 }
+func (l *Lexer) skipComment() {
+	if l.ch == '/' {
+		switch l.peekChar() {
+		case '*':
+			l.readChar()
+			l.readChar()
+			for !(l.ch == '*' && l.peekChar() == '/') {
+				if l.ch == 0 {
+					return
+				}
+				l.readChar()
+			}
+			l.readChar()
+			l.readChar()
+		case '/':
+			l.readChar()
+			l.readChar()
+			for l.ch != '\n' {
+				if l.ch == 0 {
+					return
+				}
+				l.readChar()
+			}
+			l.readChar()
+		}
+	}
+}
 
 func (l *Lexer) NextTokenMake() gtoken.Token {
 	var tok gtoken.Token
 	l.skipWhiteSpace()
+	l.skipComment()
 
 	switch l.ch {
 	case '=':
