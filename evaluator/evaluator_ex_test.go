@@ -7,7 +7,8 @@ import (
 )
 
 func TestNull(t *testing.T) {
-	input := `let a = null;
+	input := `/* test */
+	let a = null;
 	if(a == null) { 
 		return true;
 	}

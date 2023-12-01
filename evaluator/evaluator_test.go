@@ -34,7 +34,7 @@ func TestHashIndexExpressions(t *testing.T) {
 
 func TestHashLiterals(t *testing.T) {
 	input := `let two = "two";
-	{
+	{/*sdlajflasj*/
 		"one": 10 - 9,
 		two: 1 + 1,
 		"thr" + "ee": 6 / 2,

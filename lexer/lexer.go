@@ -60,6 +60,7 @@ func (l *Lexer) NextTokenMake() gtoken.Token {
 	var tok gtoken.Token
 	l.skipWhiteSpace()
 	l.skipComment()
+	l.skipWhiteSpace()
 
 	switch l.ch {
 	case '=':
