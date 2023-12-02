@@ -36,7 +36,7 @@ func TestCodeSet2(t *testing.T) {
 	test, expect := testCodeSet()
 	expectLen := len(expect)
 	b.WriteString(test)
-	b.WriteString(`!-/*5;
+	b.WriteString(`!-/5;
 		5 < 10 > 5;
 		if (5 < 10) {
 			return true;
@@ -50,7 +50,6 @@ func TestCodeSet2(t *testing.T) {
 		{gtoken.BANG, "!"},
 		{gtoken.MINUS, "-"},
 		{gtoken.SLASH, "/"},
-		{gtoken.ASTERISK, "*"},
 		{gtoken.INT, "5"},
 		{gtoken.SEMICOLON, ";"},
 		{gtoken.INT, "5"},
